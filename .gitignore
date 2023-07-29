@@ -1,7 +1,6 @@
 /.cache
 /coverage
 /dist
-.env
 .eslintcache
 /.feast
 /lib
