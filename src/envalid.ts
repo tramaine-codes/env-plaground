@@ -4,7 +4,9 @@ import { cleanEnv, email, json, str } from 'envalid';
 const environment = cleanEnv(process.env, {
   API_KEY: str(),
   ADMIN_EMAIL: email({ default: 'admin@example.com' }),
-  EMAIL_CONFIG_JSON: json({ desc: 'Additional email parameters' }),
+  EMAIL_CONFIG_JSON: json<{ bar: string }>({
+    desc: 'Additional email parameters',
+  }),
   NODE_ENV: str({ choices: ['development', 'test', 'production', 'staging'] }),
 });
 
